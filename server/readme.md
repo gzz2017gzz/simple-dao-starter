@@ -1,99 +1,98 @@
-# SimpleDAO 管理系统底座 · 后端
+# SimpleDAO Management System Foundation · Back‑end
 
-基于 Spring Boot + SimpleDAO 的后端项目骨架，集成 RBAC 权限体系，开箱即用。
+A back‑end project skeleton built on Spring Boot + SimpleDAO, with an integrated RBAC permission system, ready to use out of the box.
 
-## 技术栈 & 环境要求
+## Tech Stack & Environment Requirements
 
-| 技术 | 版本 |
-|------|------|
-| JDK | 21LTS |
-| Spring Boot | 3.3.x |
-| Spring JDBC | 6.1.x |
-| SimpleDAO | 1.2.1 |
-| MySQL | 8.0+ |
-| Redis | 6.2+ |
-| Lombok | 1.18.x |
-| JWT | 4.4.x |
-| Maven | 3.9+ |  
+| Technology | Version |
+|------------|---------|
+| JDK        | 21 LTS |
+| Spring Boot| 3.3.x   |
+| Spring JDBC| 6.1.x   |
+| SimpleDAO  | 1.2.1   |
+| MySQL      | 8.0+    |
+| Redis      | 6.2+    |
+| Lombok     | 1.18.x  |
+| JWT        | 4.4.x   |
+| Maven      | 3.9+    |
 
-## 优点特色
+## Highlights
 
-- **极简SQL开发**：基于SimpleDAO对Spring JDBC的适度封装，基础CRUD无需编写SQL；复杂SQL拼接简洁，无需嵌套if语句或XML标签
-- **启动性能极致**：启动仅需3秒、重启1秒，调试效率极高，拒绝臃肿
-- **代码极易维护**：结构清晰，改动、扩展成本极低
-- **全栈代码生成**：集成配套代码生成器，前后端代码一键生成，大幅降低重复开发工作量
-- **审计字段自动填充**：插入时自动填充create_time、create_by，更新时自动填充update_time、update_by
-- **软删除自动化**：自动处理dr删除标记字段，无需手动编写软删除逻辑
-- **调试体验极佳**：控制台直接打印带参数值的完整SQL，问题定位更高效
+- **Minimalist SQL Development**: Based on SimpleDAO's sensible layer over Spring JDBC, basic CRUD requires no handwritten SQL; complex SQL assembly is concise — no nested if statements or XML tags.
+- **Lightning‑fast Startup**: Starts in just 3 seconds, restarts in 1 second. Extremely high debugging efficiency. Say goodbye to bloat.
+- **Highly Maintainable Code**: Clean structure with extremely low cost for modifications and extensions.
+- **Full‑stack Code Generation**: Integrated with the companion code generator; generate front‑end and back‑end code in one click, drastically reducing repetitive development work.
+- **Automatic Audit Field Population**: `create_time` and `create_by` are populated automatically on insert; `update_time` and `update_by` are populated automatically on update.
+- **Automated Soft Deletion**: The `dr` delete marker field is handled automatically — no manual soft‑delete logic required.
+- **Superior Debugging Experience**: Complete SQL with parameter values is printed directly to the console, making issue diagnosis far more efficient.
 
-## 快速启动
+## Quick Start
 
-### 1. 创建数据库
+### 1. Create the Database
 
-登录 MySQL，执行以下命令：
+Log into MySQL and execute the following command:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS simple_admin DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 ```
 
-### 2. 导入数据库脚本
+### 2. Import the Database Script
 
 ```bash
 mysql -u root -p simple_admin < ../init-schema.sql
 ```
 
-### 3. 修改配置
+### 3. Edit Configuration
 
-编辑 `src/main/resources/application.yml`，修改数据库和Redis连接信息：
+Edit `src/main/resources/application.yml` and update the database and Redis connection details:
 
 ```yaml
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/simple_admin?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
-    password: 你的密码
+    password: your_password
   redis:
     host: localhost
     port: 6379
-    password: 你的Redis密码（如果没有密码，留空即可）
+    password: your_redis_password   # leave blank if no password
 ```
 
-### 4. 启动项目
+### 4. Start the Application
 
 ```bash
 mvn spring-boot:run
 ```
 
-启动后访问 `http://localhost:8888`，看到启动成功日志即表示运行正常。
+After startup, open `http://localhost:8888`. If you see the startup success log, the application is running normally.
 
+## Built‑in Features
 
-## 内置功能
+| Module | Functionality |
+|--------|---------------|
+| User Management | User info maintenance, status management, password reset, role & department assignment |
+| Role Management | RBAC‑based functional authorization, data authorization, user association |
+| Menu Management | Dual display via tree structure + list, supports dynamic routing and button‑level permissions |
+| Department Management | Tree structure + list form to meet the hierarchical management needs of organizational structures |
+| Dictionary Management | Centralized management of common dictionary data with dynamic configuration support |
+| Operation Logging | AOP automatically records request parameters and return results for every operation |
+| API Monitoring | Captures request duration for each endpoint to accurately pinpoint performance bottlenecks |
+| API Security | JWT‑based endpoint authentication mechanism to safeguard access security |
 
-| 模块 | 功能 |
-|------|------|
-| 用户管理 | 用户信息维护、状态管理、密码重置、角色与部门分配 |
-| 角色管理 | 基于 RBAC 的功能授权、数据授权、用户关联 |
-| 菜单管理 | 树结构+列表双重展示，支持动态路由与按钮权限 |
-| 部门管理 | 树结构+列表形式，满足组织架构的层级管理需求 |
-| 字典管理 | 统一管理系统通用字典数据，支持动态配置 |
-| 操作日志 | AOP 自动记录所有操作的请求参数与返回结果 |
-| 接口监管 | 统计每个接口请求时长，精准定位性能瓶颈 |
-| 接口安全 | 基于 JWT 的接口鉴权机制，保障访问安全 |
+## Development Tools
 
-## 开发工具
+IntelliJ IDEA is recommended for back‑end development.
 
-推荐使用 IntelliJ IDEA 进行后端开发。
+## FAQ
 
-## 常见问题
+**Q: "Access denied for user" error on startup?**  
+A: Check whether the database username and password in `application.yml` are correct.
 
-**Q：启动报错“Access denied for user”？**
-A：检查 `application.yml` 中的数据库用户名和密码是否正确。
+**Q: "Unknown database" error on startup?**  
+A: Perform Step 1 to create the database first, then Step 2 to import the script.
 
-**Q：启动报错“Unknown database”？**
-A：请先执行步骤1创建数据库，再执行步骤2导入脚本。
+**Q: How can I change the logical‑delete marker field?**  
+A: Configure `simple-dao.logic-delete.field` in `application.yml`. The default is `dr`.
 
-**Q：想修改逻辑删除的标记字段？**
-A：在 `application.yml` 中配置 `simple-dao.logic-delete.field` 即可，默认为 `dr`。
-
-**Q：Redis 连接失败？**
-A：检查 Redis 服务是否已启动，以及 `application.yml` 中的 Redis 连接配置是否正确。
+**Q: Redis connection failure?**  
+A: Check whether the Redis service is running and whether the Redis connection configuration in `application.yml` is correct.

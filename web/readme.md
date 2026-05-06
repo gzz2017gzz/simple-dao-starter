@@ -1,96 +1,91 @@
+# SimpleDAO Management System Foundation · Front-end
 
-# SimpleDAO 管理系统底座 · 前端
+A back-office administration front-end skeleton built with Vue 2 + Element UI, seamlessly integrated with the SimpleDAO back-end.
 
-基于 Vue 2 + Element UI 的后台管理前端骨架，与 SimpleDAO 后端无缝配合。
+## Tech Stack & Environment Requirements
 
-## 技术栈 &环境要求
+| Technology | Version |
+|------------|---------|
+| Vue        | 2.7.x   |
+| Element UI | 2.15.x  |
+| Axios      | 1.7.x   |
+| Moment     | 2.30.x  |
+| Webpack    | 5.x     |
+| Node.js    | 18.x LTS |
+| npm        | 8.x     |
 
-| 技术 | 版本 |
-|------|------|
-| Vue | 2.7.x |
-| Element UI | 2.15.x |
-| Axios | 1.7.x |
-| Moment | 2.30.x |
-| Webpack | 5.x |
-| Node.js | 18.x LTS |
-| npm | 8.x |
+## Quick Start
 
-
-
-## 快速启动
-
-### 1. 安装依赖
+### 1. Install Dependencies
 
 ```bash
-npm install --registry=https://registry.npmmirror.com
+npm install --registry=https://registry.npmmirror.com
 ```
 
-### 2. 配置后端接口地址
+### 2. Configure Back-end Endpoint
 
-编辑 `vue.config.js` 文件：
+Edit the `vue.config.js` file:
 
 ```js
 target: 'http://localhost:8888/' 
 ```
 
-### 3. 启动开发服务器
+### 3. Start the Development Server
 
 ```bash
 npm run serve
 ```
 
-启动后访问 `http://localhost:9000`，使用默认账号登录：
+After startup, open `http://localhost:9000` and log in with the default credentials:
 
-| 账号 | 密码 |
-|------|------|
-| admin | 123456 |
+| Account | Password |
+|---------|----------|
+| admin   | 123456   |
 
- 
+## Common Components
 
-## 通用组件说明
+| Component | Purpose |
+|-----------|---------|
+| v-table   | A unified table component (borders, size, loading state, row styles) |
+| v-select  | Dictionary dropdown (pass a `dictKey` to auto-render options) |
+| v-page    | Unified pagination bar (page size options, page navigation) |
+| v-footer  | Unified footer buttons for dialogs (confirm, cancel) |
 
-| 组件 | 用途 |
-|------|------|
-| v-table | 统一风格的表格组件（边框、尺寸、加载状态、行样式） |
-| v-select | 字典下拉组件（传入 dictKey 自动渲染选项） |
-| v-page | 统一分页条（页大小选项、页码切换） |
-| v-footer | 统一弹窗底部按钮（确定、取消） |
+## Mixins and Utility Functions
 
-## 混入与工具函数说明
+| File   | Purpose |
+|--------|---------|
+| page.js | Common logic for paginated list pages (pagination, search, reset, row selection, file download) |
+| tree.js | Common logic for tree pages (tree loading, node operations) |
+| dicts.js | Dictionary data reading and formatted translation |
+| http.js  | Axios request interceptor (token injection, expiration handling, unified error handling) |
 
-| 文件 | 用途 |
-|------|------|
-| page.js | 分页列表页通用逻辑（翻页、查询、重置、选中记录、下载文件） |
-| tree.js | 树型页面通用逻辑（树形加载、节点操作） |
-| dicts.js | 字典数据读取与格式化翻译 |
-| http.js | Axios 请求拦截器（Token 注入、过期处理、错误统一处理） |
+## Built-in Pages
 
-## 内置页面
+| Page                | Functionality |
+|---------------------|---------------|
+| User Management     | User list, add/edit, role assignment, status management |
+| Role Management     | Role list, menu permission assignment, user association |
+| Menu Management     | Dual tree + list display, CRUD |
+| Department Management | Tree structure, hierarchical management |
+| Dictionary Management | Maintenance of dictionary types and dictionary entries |
+| Operation Logs      | Viewing of key operation records |
+| API Monitoring      | Statistics on API request durations |
 
-| 页面 | 功能 |
-|------|------|
-| 用户管理 | 用户列表、新增编辑、角色分配、状态管理 |
-| 角色管理 | 角色列表、菜单权限分配、用户关联 |
-| 菜单管理 | 树形+列表双重展示，增删改查 |
-| 部门管理 | 树形结构，层级管理 |
-| 字典管理 | 字典类型与字典项维护 |
-| 操作日志 | 关键操作记录查看 |
-| 接口监管 | 接口请求时长统计 |
+## Development Tools
 
-## 开发工具
+VSCode or WebStorm is recommended for front-end development.
 
-推荐使用 VSCode 或 WebStorm 进行前端开发。
+## FAQ
 
-## 常见问题
+**Q: "Network error" on login?**  
+A: Check whether the back-end is running and whether the endpoint address in `.env.development` is correct.
 
-**Q：登录提示“网络错误”？**
-A：检查后端是否已启动，以及 `.env.development` 中的接口地址是否正确。
+**Q: Dictionary dropdown has no data?**  
+A: Confirm that the corresponding dictionary type and entries have been configured in the back-end's dictionary management module.
 
-**Q：字典下拉没有数据？**
-A：确认后端字典管理模块中已配置对应的字典类型和字典项。
+**Q: Blank page or compilation errors?**  
+A: Run `npm install` to reinstall dependencies, and ensure the Node.js version meets 18.x LTS.
 
-**Q：页面空白或编译报错？**
-A：执行 `npm install` 重新安装依赖，确保 Node.js 版本满足 18.x LTS。
-
-**Q：如何修改前端端口？**
-A：在 `vue.config.js` 中修改 `devServer.port` 配置项即可。
+**Q: How to change the front-end port?**  
+A: Modify the `devServer.port` configuration item in `vue.config.js`.
