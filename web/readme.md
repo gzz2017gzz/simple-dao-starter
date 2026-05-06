@@ -19,7 +19,7 @@ A back-office administration front-end skeleton built with Vue 2 + Element UI, s
 ### 1. Install Dependencies
 
 ```bash
-npm install --registry=https://registry.npmmirror.com
+npm install
 ```
 
 ### 2. Configure Back-end Endpoint
