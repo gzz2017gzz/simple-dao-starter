@@ -1,0 +1,11 @@
+/target/
+/logs/
+/.settings/
+.classpath
+.project
+/.idea/
+/src/main/resources/static/
+application-my.yml
+
+
+/backManager.iml

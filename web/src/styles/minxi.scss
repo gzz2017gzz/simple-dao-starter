@@ -1,0 +1,58 @@
+.table-operator {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+
+  ::v-deep .el-button {
+    margin-left: 0;
+  }
+}
+
+.table-page-search-wrapper {
+  .el-form-item {
+    height: 40px;
+    display: flex !important;
+    margin-right: 0;
+    margin-bottom: 10px;
+
+    ::v-deep .el-form-item__content {
+      flex: 1 !important;
+    }
+  }
+}
+
+.el-date-editor.el-input,
+.el-date-editor.el-input__inner {
+  width: auto;
+}
+
+::v-deep {
+  .demo-table-expand {
+    font-size: 0;
+    padding-left: 20px;
+  }
+
+  .demo-table-expand label {
+    width: 90px;
+    color: #99a9bf;
+  }
+
+  .demo-table-expand .el-form-item {
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 50%;
+  }
+}
+
+.el-form-item {
+  padding: 0px;
+  height: 24px;
+}
+
+::v-deep {
+  .form-find {
+    .el-select { width: 160px; }
+    .el-input--mini { width: 160px; }
+  }
+}

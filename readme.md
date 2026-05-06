@@ -1,96 +1,24 @@
-#### 联系方式: gzz_gzz@163.com
-#### [代码生成器源码地址](https://github.com/gzz2017gzz/code/)
-#### [代码生成器演示地址](http://www.gaozz.club/)
+# SimpleDAO 脚手架
 
-### 本人精心整理spring boot 2.x多个实例,全部调试通过,希望对大家学习spring boot 2有所帮助,很多实例可以在项目中直接使用各位在使用过程中遇到问题,欢迎留言交流.
-#### 01-spring-boot-helloWorld //调度器
-#### 02-spring-boot-banner//springboot标识广告
-#### 03-spring-boot-scheduler//任务调度器
-#### 04-spring-boot-mybatis-xml//mybaist-xml方式
-#### 05-spring-boot-logback//默认logback日志工具
-#### 06-spring-boot-jdbc//整合springjdbc
-#### 07-spring-boot-jdbc-blob//springjdbc二进制字段读写
-#### 08-spring-boot-jdbc-singleField//springjdbc单个读写
-#### 09-spring-boot-mybatis-annotations//mybaist-注解方式
-#### 10-spring-boot-jpa-curd//jpa增删改查
-#### 11-spring-boot-swagger//在线文档生成
-#### 12-spring-boot-resttemplate//http请求工具
-#### 13-spring-boot-beans//内置bean
-#### 14-spring-boot-log4j//使用log4j日志工具
-#### 15-spring-boot-servlet//使用servlet
-#### 16-spring-boot-flux//影应式编程
-#### 17-spring-boot-log4j2//使用log4j2日志工具
-#### 18-spring-boot-package//多工程打包
-#### 19-spring-boot-config//配置文件的使用
-#### 20-spring-boot-shiro//整合shiro权限工具
-#### 21-spring-boot-RedisTemplate//整合redis读写工具
-#### 22-spring-boot-Redis-session//整合redis-session
-#### 23-spring-boot-mail//整合邮件发送工具
-#### 24-spring-boot-lombok//整合代码减化工具
-#### 25-spring-boot-redis-cluster//整合redis集群
-#### 26-spring-boot-listener//监听器的使用
-#### 27-spring-boot-jdbc-ehcahe//ehcahe内存缓存使用
-#### 28-spring-boot-Asynchronous//异步方法的使用
-#### 29-spring-boot-MockMvc//MVC测试工具的使用
-#### 30-spring-boot-thymeleaf//thymeleaf模板的使用
-#### 31-spring-boot-file-upload//文件上传下载
-#### 32-spring-boot-redis-cache//redis当缓存使用
-#### 33-spring-boot-commandLineRunner//命令行运行方式
-#### 34-spring-boot-package-war//如何打war包
-#### 35-spring-boot-rabbitmq//整合消息队列rabbitmq
-#### 36-spring-boot-cors-jsonp//跨域访问与页面
-#### 37-spring-boot-DynamicDataSource//动态多数据源适用jpa,mybatis,jdbc
-#### 38-spring-boot-druid//阿里数据源druid
-#### 39-spring-boot-static//静态资源的处理
-#### 40-spring-boot-jsp//使用传统jsp
-#### 41-spring-boot-fastjson//转换器换成fastjson
-#### 42-spring-boot-Interceptor//拦截器的使用
-#### 43-spring-boot-Interceptor-log//拦截器记日志
-#### 44-spring-boot-Interceptor-jjwt//拦截器令牌验证
-#### 45-spring-boot-Interceptor-jjwt2//拦截器令牌验证2
-#### 46-spring-boot-filter-jjwt//过滤器令牌验证
-#### 47-spring-boot-exception//全局异常处理与api结果封装
-#### 49-spring-boot-dubbo//整合dubbo
-#### 50-spring-boot-freemarker//整合freemarker
-#### 51-spring-boot-activemq//整合activemq
-#### 53-spring-boot-repeat-submit//防重复提交集群版
-#### 54-spring-boot-repeat-submit-single//防重复提交单机版
-#### 55-spring-boot-hessianserver//hessian服务器
-#### 56-spring-boot-hessianclient//hessian客户端
-#### 60-spring-boot-TestRestTemplate//Http测试
-#### 61-spring-boot-mybatis-page//mybatis分页插件与tk-mybatis      
-#### 62-spring-boot-jdk8-date//jdk8日期格式化      
-#### 63-spring-boot-mybatis-mini//mybatis最小实例    
-#### 64-spring-boot-aop-token//AOP实现令牌       
-#### 65-spring-boot-task//自动任务            
-#### 66-spring-boot-aop-annotation//AOP与自定义注解
-#### 48-spring-boot-mongodb//使用mongodb
-#### 52-spring-boot-multi-mongodb//多数据源
-#### 57-spring-boot-mongodb-first//第一个例子
-#### 58-spring-boot-MongoTemplate//使用MongoTemplate
-#### 59-spring-boot-axios-excel//axios导出excel
-#### 60-spring-boot-TestRestTemplate//RestTemplate使用
-#### 61-spring-boot-mybatis-page//mybatis分页工具
-#### 62-spring-boot-jdk8-date//新的日历处理类
-#### 63-spring-boot-mybatis-mini//mybatis最小实例
-#### 64-spring-boot-aop-token//aop-token//AOP实现令牌
-#### 65-spring-boot-task//
-#### 66-spring-boot-aop-annotation//
-#### 67-spring-boot-jpa-cache//
-#### 68-spring-boot-data-rest//
-#### 69-spring-boot-security//
-#### 70-spring-boot-localdate//
-#### 71-spring-boot-response-xml//
-#### 72-spring-boot-flyway//
-#### 73-spring-boot-websocket-vue-stomp//
-#### 74-spring-boot-webwocket-vue//
-#### 75-spring-boot-kafka//
-#### 76-spring-boot-kafka//
-#### 77-vue-echarts-map//vue-echarts显示地图
-#### 78-springboot-muti-datasource//多数据源事务失效
-#### 79-springboot-atomikos-jta//jta-atomikos分布式事物
-#### 80-springboot-restdocs//生成文档
-#### 81-springboot-fastdfs//整合fastdfs
-#### 82-spring-boot-docker//生成docker镜像
+基于 **SimpleDAO** 的后端管理系统底座，开箱即用，包含：
 
+-   **server**：Java 后端工程（Spring Boot + SimpleDAO）
+-   **web**：Vue 前端工程（Element UI）
 
+---
+
+## 📖 文档
+
+-   [后端 README](server/readme.md)
+-   [前端 README](web/readme.md)
+
+---
+
+## 🚀 快速开始
+
+1.  Clone 本项目
+2.  后端：用 IDEA 打开 `server/`，运行 `ApplicationServer.java`
+3.  前端：在 `web/` 下执行 `npm install`，然后 `npm run serve`
+4.  浏览器访问前端页面，即可体验
+
+具体配置与说明请分别阅读前后端 README。

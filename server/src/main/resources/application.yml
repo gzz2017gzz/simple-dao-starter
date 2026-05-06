@@ -1,0 +1,14 @@
+server:
+  port: 8888
+spring:
+  threads.virtual.enabled: true
+  profiles:
+    active: dev
+  servlet.multipart.max-file-size: 20MB #单文件上传大小
+  servlet.multipart.max-request-size: 50MB #总文件上传大小
+  application:
+    name: crm
+  workerId: 0 #主键生成器服务ID(0~31)
+  dataCenterId: 0 #主键生成器数据中心ID(0~31)
+
+

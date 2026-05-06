@@ -1,0 +1,7 @@
+/node_modules
+/dist
+/.history
+/.vscode
+/.idea/
+/package-lock.json
+/public/version.json
