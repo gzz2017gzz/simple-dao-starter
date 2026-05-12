@@ -13,9 +13,6 @@ export const pageMix = {
       allShow: false,/*显示全部条件 */
     }
   },
-  // activated() {
-  //   this.loadDataInit();
-  // },
   methods: {
     /*格式化*/
     dateFormat,dictFormat,multiDictFormat,showField,dateShortFormat,
@@ -44,40 +41,5 @@ export const pageMix = {
     },
      /*点击查询按钮回到第1页*/
     loadDataInit(){ this.page=1; this.size=15; this.loadData(); },
-    /**
-     * 计算表格列宽度
-     * @param {String} prop 字段名
-     * @param {Object[]} dataList 数据列表
-     * @param {Number?} size 字体大小
-     * @param {Boolean?} isDict 是否字典格式化
-     * @param {String?} dictCode 字典编码
-     * @param {String?} labelName 字段中文名
-     * @returns {string}
-     * */
-    computedWidth(prop,dataList,labelName,isDict = false,dictCode,size= 15){
-      if (dataList.length > 0) {
-        if (isDict) {
-          const value =  this.dictFormat(dataList[0],{property:prop}, dictCode)
-          const canvas = document.createElement('canvas');
-          const cts = canvas.getContext('2d');
-          let maxWidth = 0;
-          cts.font = `${size}px Microsoft YaHei`;
-          maxWidth = cts.measureText(value).width;
-          return maxWidth < 100 ? '90' : String(maxWidth + 10);
-        } else {
-          const canvas = document.createElement('canvas');
-          const cts = canvas.getContext('2d');
-          cts.font = `${size}px Microsoft YaHei`;
-          let maxWidth = 0;
-          let labelNameWidth = labelName ? cts.measureText(labelName).width : 0;
-          dataList.map(item => {
-            if (cts.measureText(item[prop]).width > maxWidth) {
-              maxWidth = cts.measureText(item[prop]).width;
-            }
-          })
-          return labelNameWidth > maxWidth ? labelNameWidth : maxWidth < 90 ? '90' : String(maxWidth + 10);
-        }
-      }
-    },
   }
 }

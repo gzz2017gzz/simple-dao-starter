@@ -12,19 +12,18 @@
     <el-card shadow="always" style="margin-top: 50px;width: 50%">
       <div style="font-weight: 800">快捷入口</div>
       <div>
-        <router-link to="/base/classenroll/ClassEnrollPage">
-          <v-button buttonKey="ClassEnrollPage" type="primary" plain style="margin-right: 20px;margin-top: 20px">
+        <router-link to="/sys/dict/DictPage">
+          <el-button   type="primary" plain style="margin-right: 20px;margin-top: 20px">
             <div style="font-size: 30px" class="el-icon-s-cooperation"></div>
-            <div style="margin-top: 10px">入学班型</div>
-          </v-button>
+            <div style="margin-top: 10px">字典管理</div>
+          </el-button>
         </router-link>
-<!--        base/plate/PlatePage-->
 
-        <router-link to="base/notebook/NoteBookPage">
-          <v-button buttonKey="ClassEnrollPage" type="primary" plain style="margin-right: 20px;margin-top: 20px">
+        <router-link to="/sys/user/UserPage">
+          <el-button  type="primary" plain style="margin-right: 20px;margin-top: 20px">
             <div style="font-size: 30px" class="el-icon-s-grid"></div>
-            <div style="margin-top: 10px">需求管理</div>
-          </v-button>
+            <div style="margin-top: 10px">用户管理</div>
+          </el-button>
         </router-link>
 
       </div>
